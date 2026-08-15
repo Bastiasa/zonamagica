@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ShareButton } from "../ShareButton";
+import { withBasePath } from "@/src/utils/withBasepath";
 
 export function ShareServiceButton({
     serviceData,
@@ -26,7 +27,9 @@ export function ShareServiceButton({
             shareData={{
                 text: `Mira este servicio ${serviceData.name} de Zona Mágica`,
                 url: new URL(
-                    `/servicios/${serviceData.slug}`,
+                    withBasePath(
+                        `/servicios/${serviceData.slug}`,
+                    ),
                     window.location.origin,
                 ).toString(),
                 title: serviceData.name,
