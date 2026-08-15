@@ -1,0 +1,17 @@
+.non-collapsed-pages-container {
+    display: flex;
+}
+
+.collapsed-pages-trigger {
+    display: none;
+}
+
+@media (max-width: 560px) {
+    .non-collapsed-pages-container {
+        display: none;
+    }
+
+    .collapsed-pages-trigger {
+        display: flex;
+    }
+}
