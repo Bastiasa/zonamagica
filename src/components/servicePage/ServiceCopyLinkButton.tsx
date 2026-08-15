@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/src/utils/withBasepath";
 import { ActionIcon } from "@mantine/core";
 import { useClipboard } from "@mantine/hooks";
 import {
@@ -21,7 +22,9 @@ export function ServiceCopyLinkButton({
             onClick={() => {
                 clipboard.copy(
                     new URL(
-                        `/servicios/${serviceData.slug}`,
+                        withBasePath(
+                            `/servicios/${serviceData.slug}`,
+                        ),
                         window.location.origin,
                     ),
                 );
