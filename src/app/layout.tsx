@@ -7,6 +7,7 @@ import "./globals.css";
 import { Providers } from "../components/Providers";
 import MainLayoutHeader from "../layouts/main/Header";
 import MainLayoutFooter from "../layouts/main/Footer";
+import { withBasePath } from "../utils/withBasepath";
 
 export const metadata: Metadata = {
     title: "Zona Mágica",
@@ -28,7 +29,7 @@ export default function RootLayout({
             <head>
                 <link
                     rel="shortcut icon"
-                    href="/favicon.png"
+                    href={withBasePath("/favicon.png")}
                     type="image/png"
                 />
 
