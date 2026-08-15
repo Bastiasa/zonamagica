@@ -42,6 +42,7 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData[] =
                 "Hora loca",
                 "Inflable",
             ],
+            image: "/images/services/grandote.jpeg",
         },
 
         {
@@ -56,5 +57,6 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData[] =
                 "Inflable",
                 "Personaje(s) especial(es)",
             ],
+            image: "/images/services/especial.jpeg",
         },
     ] as const;
