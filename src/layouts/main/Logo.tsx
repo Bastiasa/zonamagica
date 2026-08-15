@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Group, Text } from "@mantine/core";
+import { withBasePath } from "@/src/utils/withBasepath";
 
 /**
  * Brand assets expected at:
@@ -33,7 +34,7 @@ export function Logo({
     const mark =
         variant === "full" ? (
             <Image
-                src="/logo.png"
+                src={withBasePath("/logo.png")}
                 alt="Zona Mágica"
                 width={1536}
                 height={1024}
@@ -43,7 +44,7 @@ export function Logo({
             />
         ) : (
             <Image
-                src="/favicon.png"
+                src={withBasePath("/favicon.png")}
                 alt="Zona Mágica"
                 width={1254}
                 height={1254}

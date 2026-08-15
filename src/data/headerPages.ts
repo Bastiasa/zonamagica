@@ -1,7 +1,9 @@
+import { withBasePath } from "../utils/withBasepath";
+
 export const HEADER_PAGES: [href: string, title: string][] =
     [
-        ["/", "Inicio"],
-        ["/sobre-nosotros", "Sobre nosotros"],
+        [withBasePath("/"), "Inicio"],
+        [withBasePath("/sobre-nosotros"), "Sobre nosotros"],
         //["/resenas", "Reseñas"],
-        ["/contacto", "Contacto"],
+        [withBasePath("/contacto"), "Contacto"],
     ] as const;

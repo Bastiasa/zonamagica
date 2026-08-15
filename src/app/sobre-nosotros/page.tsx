@@ -1,4 +1,5 @@
 import { CenteredSection } from "@/src/components/CenteredSection";
+import { withBasePath } from "@/src/utils/withBasepath";
 import {
     AppShellSection,
     Button,
@@ -26,9 +27,9 @@ export default function AboutUsPageHandler() {
 
                     <Stack mx={"auto"} maw={360}>
                         <Image
-                            src={
-                                "/images/about-us/boss.png"
-                            }
+                            src={withBasePath(
+                                "/images/about-us/boss.png",
+                            )}
                             width={"100%"}
                             maw={360}
                             mx={"auto"}

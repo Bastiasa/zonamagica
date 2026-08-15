@@ -22,6 +22,7 @@ import { ENTERPRISE_DEFINED_SERVICES } from "@/src/data/services";
 import { HEADER_PAGES } from "@/src/data/headerPages";
 import { CONTACT } from "@/src/data/contact";
 import { SOCIALS } from "@/src/data/socials";
+import Link from "next/link";
 
 const SERVICIOS = ENTERPRISE_DEFINED_SERVICES.map(
     ({ name, slug }) => ({
@@ -183,14 +184,15 @@ export default function MainLayoutFooter() {
                                 Servicios
                             </Text>
                             {SERVICIOS.map((item) => (
-                                <Anchor
+                                <Link
                                     key={item.href}
                                     href={item.href}
-                                    underline="never"
                                     className="text-white/75 text-sm transition-colors hover:text-white"
                                 >
-                                    {item.label}
-                                </Anchor>
+                                    <Text>
+                                        {item.label}
+                                    </Text>
+                                </Link>
                             ))}
                         </Stack>
 
@@ -253,7 +255,7 @@ export default function MainLayoutFooter() {
                                 <Anchor
                                     href={`mailto:${CONTACT.email}`}
                                     underline="never"
-                                    className="text-white/75 text-sm hover:text-white"
+                                    className="text-white/75 break-all text-sm hover:text-white"
                                 >
                                     {CONTACT.email}
                                 </Anchor>
@@ -293,7 +295,7 @@ export default function MainLayoutFooter() {
                             derechos reservados.
                         </Text>
                         <Group gap="lg">
-                            <Anchor
+                            {/* <Anchor
                                 href="/privacidad"
                                 underline="never"
                                 className="text-white/50 text-xs hover:text-white"
@@ -306,7 +308,7 @@ export default function MainLayoutFooter() {
                                 className="text-white/50 text-xs hover:text-white"
                             >
                                 Términos y condiciones
-                            </Anchor>
+                            </Anchor> */}
                         </Group>
                     </div>
                 </Container>

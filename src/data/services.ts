@@ -1,3 +1,5 @@
+import { withBasePath } from "../utils/withBasepath";
+
 const MINIMAL_ATTRIBUTES = [
     "Pintucaritas",
     "Show de títeres",
@@ -9,12 +11,13 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData[] =
         {
             slug: "minipack",
             name: "Minipack Fiesta",
-            description: "lorem ipsum",
             price: 160_000,
             hours: 3,
             workers: 1,
             attributes: [...MINIMAL_ATTRIBUTES],
-            image: "/images/services/minipack.jpeg",
+            image: withBasePath(
+                "/images/services/minipack.jpeg",
+            ),
         },
 
         {
@@ -28,7 +31,9 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData[] =
                 "Hora loca",
                 "Personaje(s) especial(es)",
             ],
-            image: "/images/services/fiestero.jpeg",
+            image: withBasePath(
+                "/images/services/fiestero.jpeg",
+            ),
         },
 
         {
@@ -42,7 +47,9 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData[] =
                 "Hora loca",
                 "Inflable",
             ],
-            image: "/images/services/grandote.jpeg",
+            image: withBasePath(
+                "/images/services/grandote.jpeg",
+            ),
         },
 
         {
@@ -57,6 +64,8 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData[] =
                 "Inflable",
                 "Personaje(s) especial(es)",
             ],
-            image: "/images/services/especial.jpeg",
+            image: withBasePath(
+                "/images/services/especial.jpeg",
+            ),
         },
     ] as const;
