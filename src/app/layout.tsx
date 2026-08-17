@@ -8,6 +8,12 @@ import { Providers } from "../components/Providers";
 import MainLayoutHeader from "../layouts/main/Header";
 import MainLayoutFooter from "../layouts/main/Footer";
 import { withBasePath } from "../utils/withBasepath";
+import {
+    GANoscript,
+    GAInit,
+    GoogleConsent,
+} from "../components/GAnalytics";
+import CookieBanner from "../components/ConsentBanner";
 
 export const metadata: Metadata = {
     title: "Zona Mágica",
@@ -27,6 +33,9 @@ export default function RootLayout({
             )}
         >
             <head>
+                <GAInit />
+                <GoogleConsent />
+
                 <link
                     rel="shortcut icon"
                     href={withBasePath("/favicon.png")}
@@ -48,6 +57,7 @@ export default function RootLayout({
                 ></link>
             </head>
             <body className="min-h-screen flex flex-col">
+                <GANoscript />
                 <Providers>
                     <MainLayoutHeader />
 
@@ -56,6 +66,8 @@ export default function RootLayout({
                     </main>
 
                     <MainLayoutFooter />
+
+                    <CookieBanner />
                 </Providers>
             </body>
         </html>
