@@ -8,33 +8,28 @@ export function useScrollRestoration() {
             history.scrollRestoration = "manual";
         }
 
-        const restoreScroll = () => {
-            const scrollY =
-                sessionStorage.getItem("scrollY");
+        const key = `scroll:${window.location.pathname}`;
 
-            if (scrollY !== null) {
-                requestAnimationFrame(() => {
-                    window.scrollTo(0, Number(scrollY));
-                });
-            }
-        };
+        const saved = sessionStorage.getItem(key);
 
-        restoreScroll();
+        if (saved !== null) {
+            requestAnimationFrame(() => {
+                window.scrollTo(0, Number(saved));
+            });
+        }
 
-        const saveScroll = () => {
+        const save = () => {
             sessionStorage.setItem(
-                "scrollY",
+                key,
                 String(window.scrollY),
             );
         };
 
-        window.addEventListener("scroll", saveScroll);
+        window.addEventListener("scroll", save);
 
         return () => {
-            window.removeEventListener(
-                "scroll",
-                saveScroll,
-            );
+            save();
+            window.removeEventListener("scroll", save);
         };
     }, []);
 }
