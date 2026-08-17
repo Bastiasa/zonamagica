@@ -23,6 +23,7 @@ import { HEADER_PAGES } from "@/src/data/headerPages";
 import { CONTACT } from "@/src/data/contact";
 import { SOCIALS } from "@/src/data/socials";
 import Link from "next/link";
+import { NavigationButton } from "@/src/components/NavigationButton";
 
 const SERVICIOS = ENTERPRISE_DEFINED_SERVICES.map(
     ({ name, slug }) => ({
@@ -155,11 +156,10 @@ export default function MainLayoutFooter() {
                                         href,
                                         icon: Icon,
                                     }) => (
-                                        <Anchor
+                                        <NavigationButton
                                             key={label}
-                                            href={href}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
+                                            to={href}
+                                            variant="transparent"
                                             aria-label={
                                                 label
                                             }
@@ -169,7 +169,7 @@ export default function MainLayoutFooter() {
                                                 size={32}
                                                 stroke={1.8}
                                             />
-                                        </Anchor>
+                                        </NavigationButton>
                                     ),
                                 )}
                             </Group>
@@ -203,14 +203,15 @@ export default function MainLayoutFooter() {
                                 Empresa
                             </Text>
                             {EMPRESA.map((item) => (
-                                <Anchor
+                                <NavigationButton
+                                    variant="transparent"
+                                    w={"fit-content"}
                                     key={item.href}
-                                    href={item.href}
-                                    underline="never"
-                                    className="text-white/75 text-sm transition-colors hover:text-white"
+                                    to={item.href}
+                                    className="text-white/75! text-sm transition-colors hover:text-white!"
                                 >
                                     {item.label}
-                                </Anchor>
+                                </NavigationButton>
                             ))}
                         </Stack>
 

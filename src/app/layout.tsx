@@ -47,11 +47,13 @@ export default function RootLayout({
                     rel="stylesheet"
                 ></link>
             </head>
-            <body className="min-h-full flex flex-col">
+            <body className="min-h-screen flex flex-col">
                 <Providers>
                     <MainLayoutHeader />
 
-                    <main>{children}</main>
+                    <main className="flex-1">
+                        {children}
+                    </main>
 
                     <MainLayoutFooter />
                 </Providers>

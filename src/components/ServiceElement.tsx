@@ -14,13 +14,15 @@ import { LinkIcon } from "lucide-react";
 import { NavigationButton } from "./NavigationButton";
 import { copFormat } from "../utils/copFormat";
 
-export type ServiceElementProps = {
-    serviceData: EnterpriseServiceData;
+export type ServiceElementProps<
+    Categories extends EnterpriseServiceCategories,
+> = {
+    serviceData: EnterpriseServiceData<Categories>;
 };
 
-export function ServiceElement({
-    serviceData,
-}: ServiceElementProps) {
+export function ServiceElement<
+    Categories extends EnterpriseServiceCategories,
+>({ serviceData }: ServiceElementProps<Categories>) {
     return (
         <GridCol span={{ xs: 12, sm: 6, md: 4 }}>
             <Card withBorder>
@@ -37,7 +39,7 @@ export function ServiceElement({
                         alt={serviceData.name}
                     />
 
-                    <Title order={2} ta={"center"}>
+                    <Title order={3} ta={"center"}>
                         {serviceData.name}
                     </Title>
 

@@ -32,15 +32,15 @@ export function Hero() {
         >
             <div className="absolute opacity-[.8] -z-1 bg-black inset-0"></div>
 
-            <Title order={1} c={"white"} ta={"center"}>
-                ¡Diversión sin límites!
-            </Title>
-
             <Image
                 className="w-full max-w-120"
                 src={LOGO_BANNER}
                 alt="Zona Mágica"
             />
+
+            <Title order={1} c={"white"} ta={"center"}>
+                ¡Diversión sin límites!
+            </Title>
 
             <div className="mt-16 hover:scale-108 transition-transform duration-200">
                 <ContactButton

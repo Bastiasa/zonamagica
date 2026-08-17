@@ -1,12 +1,26 @@
 "use client";
 
-import { Button, ButtonProps } from "@mantine/core";
+import {
+    Button,
+    ButtonProps,
+    PolymorphicComponentProps,
+} from "@mantine/core";
 import { useRouter } from "next/navigation";
+import { ComponentProps, FunctionComponent } from "react";
 export function NavigationButton({
     to,
     ...props
-}: ButtonProps & { to: string }) {
+}: ButtonProps &
+    ComponentProps<"a"> & {
+        to: string;
+    }) {
     const { push } = useRouter();
 
-    return <Button onClick={() => push(to)} {...props} />;
+    return (
+        <Button
+            component="a"
+            onClick={() => push(to)}
+            {...props}
+        />
+    );
 }

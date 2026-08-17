@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
-    Anchor,
     Box,
     Burger,
     Container,
@@ -23,6 +22,7 @@ import { CONTACT } from "../../data/contact";
 import { HEADER_PAGES } from "../../data/headerPages";
 import { ContactButton } from "@/src/components/ContactButton";
 import Link from "next/link";
+import { NavigationButton } from "@/src/components/NavigationButton";
 
 export default function MainLayoutHeader() {
     const pathname = usePathname();
@@ -79,19 +79,19 @@ export default function MainLayoutHeader() {
                                         pathname ===
                                         link.href;
                                     return (
-                                        <Anchor
+                                        <NavigationButton
+                                            variant="transparent"
                                             key={link.href}
-                                            href={link.href}
-                                            underline="never"
+                                            to={link.href}
                                             fw={700}
                                             className={`text-sm transition-colors ${
                                                 active
-                                                    ? "text-[#EC1FA0]"
-                                                    : "text-[#3B0B63]/80 hover:text-[#EC1FA0]"
+                                                    ? "text-[#EC1FA0]!"
+                                                    : "text-[#3B0B63]/80! hover:text-[#EC1FA0]!"
                                             }`}
                                         >
                                             {link.label}
-                                        </Anchor>
+                                        </NavigationButton>
                                     );
                                 },
                             )}

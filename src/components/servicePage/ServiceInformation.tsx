@@ -30,9 +30,10 @@ export function ServiceInformation({
         <CenteredSection maw={600}>
             <Stack gap={"lg"}>
                 <Image
-                    maw={600}
+                    maw={400}
                     mx={"auto"}
                     bdrs={12}
+                    className="aspect-4/5"
                     src={
                         serviceData.image ??
                         "https://placehold.co/600x400"
@@ -126,10 +127,10 @@ export function ServiceInformation({
                     )}
 
                     <GridCol span={12}>
-                        <Group>
+                        <Group justify="center">
                             <ContactButton
                                 label={<p>Cotizar</p>}
-                                wsMessage={`¡Hola!, me gustaría cotizar ${serviceData.name}`}
+                                wsMessage={`¡Hola!, me gustaría cotizar el plan ${serviceData.name}`}
                             />
                         </Group>
                     </GridCol>
