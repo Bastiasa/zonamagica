@@ -15,6 +15,7 @@ import {
     saveConsent,
 } from "./ConsentManager";
 import { useEffect, useState } from "react";
+import { IconCookie } from "@tabler/icons-react";
 
 export default function CookieBanner() {
     const [visible, setVisible] = useState(false);
@@ -68,9 +69,12 @@ export default function CookieBanner() {
             }}
         >
             <Stack gap="sm">
-                <Title order={3}>
-                    Tu privacidad importa
-                </Title>
+                <Group>
+                    <Title order={3}>
+                        Tu privacidad importa
+                    </Title>
+                    <IconCookie size={32} />
+                </Group>
 
                 <Text size="sm">
                     Utilizamos cookies y tecnologías

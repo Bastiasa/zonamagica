@@ -14,6 +14,7 @@ import {
     GoogleConsent,
 } from "../components/GAnalytics";
 import CookieBanner from "../components/ConsentBanner";
+import { ConsentManager } from "../components/ConsentManager";
 
 export const metadata: Metadata = {
     title: "Zona Mágica",
@@ -58,6 +59,8 @@ export default function RootLayout({
             </head>
             <body className="min-h-screen flex flex-col">
                 <GANoscript />
+                <ConsentManager />
+
                 <Providers>
                     <MainLayoutHeader />
 
