@@ -57,7 +57,12 @@ const PriceResult = () => {
         maxPossiblePrice,
         minPossiblePrice,
         isOnePrice,
+        items,
     } = useBypContext();
+
+    if (items.filter((item) => item.checked).length < 1) {
+        return <Text>(Toque una opción)</Text>;
+    }
 
     if (isOnePrice) {
         return <Text>$ {copFormat(minPossiblePrice)}</Text>;
@@ -84,15 +89,17 @@ const BuyButton = () => {
     return (
         <>
             {parsedItems && (
-                <ContactButton
-                    label={
-                        <Text className="text-wrap!">
-                            Ordenar plan personalizado
-                        </Text>
-                    }
-                    wsIcon={null}
-                    wsMessage={`¡Hola! Quisiera cotizar un evento con lo siguiente:\n\n${parsedItems}`}
-                />
+                <div className="mx-auto">
+                    <ContactButton
+                        label={
+                            <Text className="text-wrap!">
+                                Ordenar plan personalizado
+                            </Text>
+                        }
+                        wsIcon={null}
+                        wsMessage={`¡Hola! Quisiera cotizar un evento con lo siguiente:\n\n${parsedItems}`}
+                    />
+                </div>
             )}
         </>
     );
@@ -121,6 +128,10 @@ const BypContent = () => {
                             variant="light"
                             itemData={itemData}
                             key={i}
+                            size="xs"
+                            style={{
+                                filter: "brightness(1) contrast(.8)",
+                            }}
                         >
                             {itemData.label}
                         </Item>

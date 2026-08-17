@@ -16,6 +16,11 @@ const ITEMS = [
     },
 
     {
+        label: "Show de Títeres",
+        price: 60_000,
+    },
+
+    {
         label: "Globoflexia",
         price: 40_000,
     },
