@@ -18,17 +18,28 @@ export function useScrollRestoration() {
             });
         }
 
+        let ticking = false;
+
         const save = () => {
-            sessionStorage.setItem(
-                key,
-                String(window.scrollY),
-            );
+            if (ticking) return;
+
+            ticking = true;
+
+            requestAnimationFrame(() => {
+                sessionStorage.setItem(
+                    key,
+                    String(window.scrollY),
+                );
+
+                ticking = false;
+            });
         };
 
-        window.addEventListener("scroll", save);
+        window.addEventListener("scroll", save, {
+            passive: true,
+        });
 
         return () => {
-            save();
             window.removeEventListener("scroll", save);
         };
     }, []);
