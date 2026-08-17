@@ -57,8 +57,12 @@ export default function CookieBanner() {
             withBorder
             pos="fixed"
             bottom={20}
-            left={20}
-            right={20}
+            left={0}
+            right={0}
+            w={"100%"}
+            maw={"min(calc(100% - 40px), 800px)"}
+            mx={"auto"}
+            className="box-border"
             style={{
                 zIndex: 9999,
             }}
