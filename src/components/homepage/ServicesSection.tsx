@@ -34,7 +34,7 @@ export function ServicesSection<
     return (
         <CenteredSection>
             <Stack>
-                <Title>Nuestros servicios</Title>
+                <Title>Explora nuestros planes</Title>
 
                 <Text>
                     En Zona Mágica ofrecemos una calidad de
