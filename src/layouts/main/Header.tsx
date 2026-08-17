@@ -22,11 +22,15 @@ import { Logo } from "./Logo";
 import { CONTACT } from "../../data/contact";
 import { HEADER_PAGES } from "../../data/headerPages";
 import { ContactButton } from "@/src/components/ContactButton";
+import Link from "next/link";
+import { useScrollRestoration } from "@/src/hooks/useScrollRestoration";
 
 export default function MainLayoutHeader() {
     const pathname = usePathname();
     const [opened, { open, close }] = useDisclosure(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    useScrollRestoration();
 
     useEffect(() => {
         const onScroll = () =>
@@ -166,15 +170,14 @@ export default function MainLayoutHeader() {
                         const active =
                             pathname === link.href;
                         return (
-                            <Anchor
+                            <Link
                                 key={link.href}
                                 href={link.href}
-                                underline="never"
                                 onClick={close}
                                 className={`text-lg font-bold ${active ? "text-[#FFC72C]" : "text-white/90 hover:text-[#FFC72C]"}`}
                             >
-                                {link.label}
-                            </Anchor>
+                                <Text>{link.label}</Text>
+                            </Link>
                         );
                     })}
 

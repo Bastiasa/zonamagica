@@ -100,13 +100,15 @@ export default function MainLayoutFooter() {
                             target="_blank"
                             rel="noopener noreferrer"
                             underline="never"
-                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#FFC72C] px-6 py-3 text-sm font-extrabold text-[#3B0B63] transition-transform hover:scale-105"
+                            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#FFC72C] px-6 py-3 text-sm font-extrabold text-[#3B0B63]! transition-transform hover:scale-105"
                         >
-                            <IconBrandWhatsapp
-                                size={20}
-                                stroke={2}
-                            />
-                            Escríbenos por WhatsApp
+                            <Group>
+                                <IconBrandWhatsapp
+                                    size={20}
+                                    stroke={2}
+                                />
+                                Escríbenos por WhatsApp
+                            </Group>
                         </Anchor>
                     </div>
                 </Container>
