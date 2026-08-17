@@ -49,11 +49,11 @@ export default function RootLayout({
             </head>
             <body className="min-h-full flex flex-col">
                 <Providers>
-                    <AppShell>
-                        <MainLayoutHeader />
-                        {children}
-                        <MainLayoutFooter />
-                    </AppShell>
+                    <MainLayoutHeader />
+
+                    <main>{children}</main>
+
+                    <MainLayoutFooter />
                 </Providers>
             </body>
         </html>

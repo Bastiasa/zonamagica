@@ -30,8 +30,6 @@ export default function MainLayoutHeader() {
     const [opened, { open, close }] = useDisclosure(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    useScrollRestoration();
-
     useEffect(() => {
         const onScroll = () =>
             setIsScrolled(window.scrollY > 8);

@@ -6,12 +6,10 @@ import { ENTERPRISE_DEFINED_SERVICES } from "../data/services";
 export default function Home() {
     return (
         <>
-            <AppShellSection>
-                <Hero />
-                <ServicesSection
-                    services={ENTERPRISE_DEFINED_SERVICES}
-                />
-            </AppShellSection>
+            <Hero />
+            <ServicesSection
+                services={ENTERPRISE_DEFINED_SERVICES}
+            />
         </>
     );
 }

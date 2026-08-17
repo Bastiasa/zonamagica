@@ -1,6 +1,7 @@
 import {
     AppShellSection,
     AppShellSectionProps,
+    Box,
 } from "@mantine/core";
 
 export function CenteredSection({
@@ -8,7 +9,7 @@ export function CenteredSection({
     ...props
 }: AppShellSectionProps & { children?: any }) {
     return (
-        <AppShellSection
+        <Box
             mx={"auto"}
             maw={1200}
             py={64}

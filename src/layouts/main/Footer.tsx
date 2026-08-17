@@ -95,11 +95,10 @@ export default function MainLayoutFooter() {
                                 armamos la magia contigo.
                             </Text>
                         </div>
-                        <Anchor
+                        <Link
                             href={CONTACT.whatsappHref}
                             target="_blank"
                             rel="noopener noreferrer"
-                            underline="never"
                             className="inline-flex shrink-0 items-center gap-2 rounded-full bg-[#FFC72C] px-6 py-3 text-sm font-extrabold text-[#3B0B63]! transition-transform hover:scale-105"
                         >
                             <Group>
@@ -109,12 +108,10 @@ export default function MainLayoutFooter() {
                                 />
                                 Escríbenos por WhatsApp
                             </Group>
-                        </Anchor>
+                        </Link>
                     </div>
                 </Container>
             </div>
-
-            <CurtainEdge color="#FFC72C" />
 
             {/* Main footer */}
             <div className="relative overflow-hidden bg-[#3B0B63]">
