@@ -1,6 +1,6 @@
 // src/utils/path.ts
 
-export const BASE_PATH = "/zonamagica";
+export const BASE_PATH = "";
 
 export function withBasePath(path: string) {
     if (!path.startsWith("/")) {
