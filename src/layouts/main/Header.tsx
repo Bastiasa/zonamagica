@@ -23,7 +23,6 @@ import { CONTACT } from "../../data/contact";
 import { HEADER_PAGES } from "../../data/headerPages";
 import { ContactButton } from "@/src/components/ContactButton";
 import Link from "next/link";
-import { useScrollRestoration } from "@/src/hooks/useScrollRestoration";
 
 export default function MainLayoutHeader() {
     const pathname = usePathname();
