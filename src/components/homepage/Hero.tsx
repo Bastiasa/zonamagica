@@ -4,8 +4,8 @@ import { Group, Stack, Text, Title } from "@mantine/core";
 
 import { ShimmerButton } from "@/components/ui/shimmer-button";
 
-import LOGO_BANNER from "@/src/assets/logo_banner.png";
-import HERO_BACKGROUND from "@/src/assets/homepage/hero.png";
+import LOGO_BANNER from "@/src/assets/logo_banner.webp";
+import HERO_BACKGROUND from "@/src/assets/homepage/hero.webp";
 import WHATSAPP_ICON from "@/src/assets/icons/whatsapp.svg";
 import { ContactButton } from "../ContactButton";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
