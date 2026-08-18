@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Stack, Text, Title } from "@mantine/core";
 
-import HERO_BACKGROUND from "@/src/assets/homepage/hero.jpeg";
+import HERO_BACKGROUND from "@/src/assets/homepage/hero.webp";
 import LOGO_BANNER from "@/src/assets/logo_banner.webp";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { ContactButton } from "../ContactButton";
