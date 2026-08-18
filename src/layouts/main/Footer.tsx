@@ -25,7 +25,7 @@ import { Logo } from "./Logo";
 const SERVICIOS = ENTERPRISE_DEFINED_SERVICES.map(
     ({ name, slug }) => ({
         label: name,
-        href: `/servicios/${slug}`,
+        href: `/planes/${slug}`,
     }),
 );
 
