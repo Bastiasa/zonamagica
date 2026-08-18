@@ -1,16 +1,14 @@
+import useEnterpriseServicesInCategories from "@/src/hooks/useEnterpriseServicesInCategories";
 import {
-    AppShellSection,
-    Flex,
     Grid,
     GridCol,
     Stack,
     Text,
     Title,
 } from "@mantine/core";
+import { Fragment } from "react/jsx-runtime";
 import { CenteredSection } from "../CenteredSection";
 import { ServiceElement } from "../ServiceElement";
-import useEnterpriseServicesInCategories from "@/src/hooks/useEnterpriseServicesInCategories";
-import { Fragment } from "react/jsx-runtime";
 
 export type ServicesSectionProps<
     Categories extends EnterpriseServiceCategories,
@@ -42,7 +40,7 @@ export function ServicesSection<
                     perfectamente a tu evento.
                 </Text>
 
-                <Grid gap={"md"}>
+                <Grid align="center" gap={"md"}>
                     {servicesInCategories.map(
                         (categoryData) => {
                             return (

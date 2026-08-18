@@ -1,10 +1,8 @@
 import { withBasePath } from "../utils/withBasepath";
 
-const MINIMAL_ATTRIBUTES = [
-    "Pintucaritas",
-    "Show de títeres",
-    "Show de payasos",
-];
+const IMAGE = (name: string) => {
+    return withBasePath(`/images/plans/${name}`);
+};
 
 export const ENTERPRISE_DEFINED_SERVICES_CATEGORIES = [
     {
@@ -12,8 +10,8 @@ export const ENTERPRISE_DEFINED_SERVICES_CATEGORIES = [
         label: "Fiestas y recreación",
     },
     {
-        slug: "bebes",
-        label: "Bebés y Chiquitos",
+        slug: "eventos-tematicos",
+        label: "Eventos temáticos",
     },
 ] as const;
 
@@ -34,9 +32,7 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "Globoflexia",
             "Kit de Hora loca",
         ],
-        image: withBasePath(
-            "/images/services/Planes_Chispa Mágica.png",
-        ),
+        image: IMAGE("Chispa Mágica.jpg"),
     },
 
     {
@@ -54,13 +50,109 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "Globoflexia",
             "Kit de Hora loca",
         ],
-        image: withBasePath(
-            "/images/services/Planes_Fiesta Total.png",
-        ),
+        image: IMAGE("Fiesta Total.jpg"),
     },
 
     {
+        name: "Mundo Sorpresa",
+        slug: "mundo-sorpresa",
         category: "fiestas-y-recreacion",
+        price: 260_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            "Pintucaritas",
+            "Recreación dirigida",
+            "Show de payasos",
+            "Show de títeres",
+            "Globoflexia",
+            "Kit de Hora Loca",
+            "Personaje de tu Elección",
+        ],
+        image: IMAGE("Mundo Sorpresa.jpg"),
+    },
+
+    {
+        name: "Súper Rumba",
+        slug: "super-rumba",
+        category: "fiestas-y-recreacion",
+        price: 280_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            "Pintucaritas",
+            "Recreación dirigida",
+            "Show de payasos",
+            "Show de títeres",
+            "Globoflexia",
+            "Kit de Hora Loca",
+            "Equipo de Sonido",
+        ],
+        image: IMAGE("Súper Rumba.jpg"),
+    },
+
+    {
+        name: "Aventura Inflable",
+        slug: "aventura-inflable",
+        category: "fiestas-y-recreacion",
+        price: 370_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            "Pintucaritas",
+            "Recreación dirigida",
+            "Show de payasos",
+            "Show de títeres",
+            "Globoflexia",
+            "Kit de Hora Loca",
+            "Inflable",
+        ],
+        image: IMAGE("Aventura Inflable.jpg"),
+    },
+
+    {
+        name: "Magia Fantástica",
+        slug: "magia-fantastica",
+        category: "fiestas-y-recreacion",
+        price: 370_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            "Pintucaritas",
+            "Recreación dirigida",
+            "Show de payasos",
+            "Show de títeres",
+            "Globoflexia",
+            "Kit de Hora Loca",
+            "Inflable",
+            "Personaje de tu Elección",
+        ],
+        image: IMAGE("Magia Fantástica.jpg"),
+    },
+
+    {
+        name: "Mega Fiesta VIP",
+        slug: "mega-fiesta-vip",
+        category: "fiestas-y-recreacion",
+        price: 470_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            "Pintucaritas",
+            "Recreación dirigida",
+            "Show de payasos",
+            "Show de títeres",
+            "Globoflexia",
+            "Kit de Hora Loca",
+            "Inflable",
+            "Personaje de tu Elección",
+            "Equipo de Sonido",
+        ],
+        image: IMAGE("Mega Fiesta VIP.jpg"),
+    },
+
+    {
+        category: "eventos-tematicos",
         name: "Splash Fest",
         slug: "splash-fest",
         price: 380_000,
@@ -73,13 +165,11 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "Hula Hula",
             "Kit de Hora Loca",
         ],
-        image: withBasePath(
-            "/images/services/Planes_Splash Fest.png",
-        ),
+        image: IMAGE("Splash Fest.jpg"),
     },
 
     {
-        category: "bebes",
+        category: "eventos-tematicos",
         name: "Dulce Espera",
         slug: "dulce-espera",
         price: 310_000,
@@ -91,13 +181,11 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "Equipo de Sonido",
             "Regalo a los Padres (Cortesía de Zona Mágica)",
         ],
-        image: withBasePath(
-            "/images/services/Planes_Dulce Espera.png",
-        ),
+        image: IMAGE("Dulce Espera.jpg"),
     },
 
     {
-        category: "bebes",
+        category: "eventos-tematicos",
         name: "Mini Exploradores",
         slug: "mini-exploradores",
         price: 360_000,
@@ -113,8 +201,6 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "Globoflexia",
             "Equipo de Sonido",
         ],
-        image: withBasePath(
-            "/images/services/Planes_Mini Exploradores.png",
-        ),
+        image: IMAGE("Mini Exploradores.jpg"),
     },
 ] as const;
