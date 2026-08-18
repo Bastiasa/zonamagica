@@ -30,6 +30,9 @@ export async function generateMetadata({
 
     return {
         title: `Zona Mágica | Plan ${serviceData.name}`,
+        alternates: {
+            canonical: `https://zonamagica.site/servicios/${serviceData.slug}`,
+        },
     };
 }
 

@@ -1,14 +1,22 @@
 import { CenteredSection } from "@/src/components/CenteredSection";
 import { withBasePath } from "@/src/utils/withBasepath";
 import {
-    AppShellSection,
     Button,
     Image,
     Stack,
     Text,
     Title,
 } from "@mantine/core";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Zona Mágica | Sobre nosotros",
+
+    alternates: {
+        canonical: "https://zonamagica.site/sobre-nosotros",
+    },
+};
 
 export default function AboutUsPageHandler() {
     const contactUsButton = (

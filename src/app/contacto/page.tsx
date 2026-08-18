@@ -4,7 +4,6 @@ import { SOCIALS } from "@/src/data/socials";
 import { APP_THEME } from "@/src/data/theme";
 import {
     Anchor,
-    AppShellSection,
     Group,
     Stack,
     Text,
@@ -14,6 +13,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Zona Mágica | Contáctanos",
+    alternates: {
+        canonical: "https://zonamagica.site/contacto",
+    },
 };
 
 export default function ContactPageHandler() {
