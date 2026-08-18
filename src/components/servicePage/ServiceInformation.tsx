@@ -1,6 +1,5 @@
+import { copFormat } from "@/src/utils/copFormat";
 import {
-    ActionIcon,
-    Button,
     Divider,
     Grid,
     GridCol,
@@ -8,20 +7,18 @@ import {
     Image,
     List,
     ListItem,
+    SimpleGrid,
     Stack,
     Text,
     Title,
 } from "@mantine/core";
-import { CenteredSection } from "../CenteredSection";
-import { copFormat } from "@/src/utils/copFormat";
-import { ContactButton } from "../ContactButton";
-import { IconLink, IconShare } from "@tabler/icons-react";
-import { GoBackButton } from "../GoBackButton";
-import { ShareButton } from "../ShareButton";
-import { ShareServiceButton } from "./ShareServiceButton";
-import { ServiceCopyLinkButton } from "./ServiceCopyLinkButton";
 import { useMemo } from "react";
-import Script from "next/script";
+import { CenteredSection } from "../CenteredSection";
+import { ContactButton } from "../ContactButton";
+import { GoBackButton } from "../GoBackButton";
+import { SeeDetailsButton } from "./SeeDetailsButton";
+import { ServiceCopyLinkButton } from "./ServiceCopyLinkButton";
+import { ShareServiceButton } from "./ShareServiceButton";
 
 export function ServiceInformation({
     serviceData,
@@ -55,10 +52,21 @@ export function ServiceInformation({
     );
 
     return (
-        <CenteredSection maw={600}>
-            <Stack gap={"lg"}>
+        <CenteredSection maw={1200}>
+            <SimpleGrid
+                cols={{
+                    base: 1,
+                    xs: 1,
+                    sm: 2,
+                }}
+                spacing={64}
+            >
                 <Image
-                    maw={400}
+                    maw={{
+                        sm: 700,
+                        base: 400,
+                    }}
+                    alt={"Plan " + serviceData.name}
                     mx={"auto"}
                     bdrs={12}
                     className="aspect-4/5"
@@ -67,103 +75,114 @@ export function ServiceInformation({
                         "https://placehold.co/600x400"
                     }
                 />
+                <Stack id="detalles" gap={"lg"}>
+                    <Title ta={"center"}>
+                        {serviceData.name}
+                    </Title>
 
-                <Title ta={"center"}>
-                    {serviceData.name}
-                </Title>
+                    <Divider />
 
-                <Divider />
+                    <Group>
+                        <div className="mr-auto">
+                            <GoBackButton>
+                                Volver
+                            </GoBackButton>
+                        </div>
+                        <ShareServiceButton
+                            serviceData={serviceData}
+                        />
 
-                <Group>
-                    <div className="mr-auto">
-                        <GoBackButton>Volver</GoBackButton>
-                    </div>
-                    <ShareServiceButton
-                        serviceData={serviceData}
-                    />
+                        <ServiceCopyLinkButton
+                            serviceData={serviceData}
+                        />
 
-                    <ServiceCopyLinkButton
-                        serviceData={serviceData}
-                    />
-                </Group>
+                        <SeeDetailsButton />
+                    </Group>
 
-                <Grid gap={"xl"}>
-                    {serviceData.description && (
+                    <Grid gap={"xl"}>
+                        {serviceData.description && (
+                            <GridCol span={{ xs: 12 }}>
+                                <Stack>
+                                    <Title order={2}>
+                                        Descripción
+                                    </Title>
+                                    <Text>
+                                        {
+                                            serviceData.description
+                                        }
+                                    </Text>
+                                </Stack>
+                            </GridCol>
+                        )}
+
                         <GridCol span={{ xs: 12 }}>
-                            <Stack>
-                                <Title order={2}>
-                                    Descripción
+                            <Group justify="space-between">
+                                <Title order={3}>
+                                    Precio
                                 </Title>
+
                                 <Text>
-                                    {
-                                        serviceData.description
-                                    }
+                                    ${" "}
+                                    {copFormat(
+                                        serviceData.price,
+                                    )}
                                 </Text>
-                            </Stack>
-                        </GridCol>
-                    )}
+                            </Group>
 
-                    <GridCol span={{ xs: 12 }}>
-                        <Group justify="space-between">
-                            <Title order={3}>Precio</Title>
-
-                            <Text>
-                                ${" "}
-                                {copFormat(
-                                    serviceData.price,
-                                )}
-                            </Text>
-                        </Group>
-
-                        <Group justify="space-between">
-                            <Title order={3}>Horas</Title>
-
-                            <Text>{serviceData.hours}</Text>
-                        </Group>
-
-                        <Group justify="space-between">
-                            <Title order={3}>
-                                Recreadores
-                            </Title>
-
-                            <Text>
-                                {serviceData.workers}
-                            </Text>
-                        </Group>
-                    </GridCol>
-
-                    {serviceData.attributes && (
-                        <GridCol span={{ xs: 12 }}>
-                            <Stack>
-                                <Title order={2}>
-                                    Detalles
+                            <Group justify="space-between">
+                                <Title order={3}>
+                                    Horas
                                 </Title>
 
-                                <List>
-                                    {serviceData.attributes!.map(
-                                        (item, i) => (
-                                            <ListItem
-                                                key={i}
-                                            >
-                                                {item}
-                                            </ListItem>
-                                        ),
-                                    )}
-                                </List>
-                            </Stack>
-                        </GridCol>
-                    )}
+                                <Text>
+                                    {serviceData.hours}
+                                </Text>
+                            </Group>
 
-                    <GridCol span={12}>
-                        <Group justify="center">
-                            <ContactButton
-                                label={<p>Cotizar</p>}
-                                wsMessage={`¡Hola!, me gustaría cotizar el plan ${serviceData.name}`}
-                            />
-                        </Group>
-                    </GridCol>
-                </Grid>
-            </Stack>
+                            <Group justify="space-between">
+                                <Title order={3}>
+                                    Recreadores
+                                </Title>
+
+                                <Text>
+                                    {serviceData.workers}
+                                </Text>
+                            </Group>
+                        </GridCol>
+
+                        {serviceData.attributes && (
+                            <GridCol span={{ xs: 12 }}>
+                                <Stack>
+                                    <Title order={2}>
+                                        Detalles
+                                    </Title>
+
+                                    <List>
+                                        {serviceData.attributes!.map(
+                                            (item, i) => (
+                                                <ListItem
+                                                    key={i}
+                                                >
+                                                    {item}
+                                                </ListItem>
+                                            ),
+                                        )}
+                                    </List>
+                                </Stack>
+                            </GridCol>
+                        )}
+
+                        <GridCol span={12}>
+                            <Group justify="center">
+                                <ContactButton
+                                    label={<p>Cotizar</p>}
+                                    wsMessage={`¡Hola!, me gustaría cotizar el plan ${serviceData.name}`}
+                                />
+                            </Group>
+                        </GridCol>
+                    </Grid>
+                </Stack>
+            </SimpleGrid>
 
             <script
                 dangerouslySetInnerHTML={{
