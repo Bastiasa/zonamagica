@@ -1,3 +1,8 @@
+import { NavigationButton } from "@/src/components/NavigationButton";
+import { CONTACT } from "@/src/data/contact";
+import { HEADER_PAGES } from "@/src/data/headerPages";
+import { ENTERPRISE_DEFINED_SERVICES } from "@/src/data/services";
+import { SOCIALS } from "@/src/data/socials";
 import {
     Anchor,
     Container,
@@ -7,9 +12,6 @@ import {
     Text,
 } from "@mantine/core";
 import {
-    IconBrandFacebook,
-    IconBrandInstagram,
-    IconBrandTiktok,
     IconBrandWhatsapp,
     IconClockHour4,
     IconMail,
@@ -17,13 +19,8 @@ import {
     IconPhone,
     IconSparkles,
 } from "@tabler/icons-react";
-import { Logo } from "./Logo";
-import { ENTERPRISE_DEFINED_SERVICES } from "@/src/data/services";
-import { HEADER_PAGES } from "@/src/data/headerPages";
-import { CONTACT } from "@/src/data/contact";
-import { SOCIALS } from "@/src/data/socials";
 import Link from "next/link";
-import { NavigationButton } from "@/src/components/NavigationButton";
+import { Logo } from "./Logo";
 
 const SERVICIOS = ENTERPRISE_DEFINED_SERVICES.map(
     ({ name, slug }) => ({
@@ -205,10 +202,9 @@ export default function MainLayoutFooter() {
                             {EMPRESA.map((item) => (
                                 <NavigationButton
                                     variant="transparent"
-                                    w={"fit-content"}
                                     key={item.href}
                                     to={item.href}
-                                    className="text-white/75! text-sm transition-colors hover:text-white!"
+                                    className="w-auto! text-white/75! text-sm transition-colors hover:text-white!"
                                 >
                                     {item.label}
                                 </NavigationButton>

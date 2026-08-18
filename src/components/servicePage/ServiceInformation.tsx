@@ -20,12 +20,40 @@ import { GoBackButton } from "../GoBackButton";
 import { ShareButton } from "../ShareButton";
 import { ShareServiceButton } from "./ShareServiceButton";
 import { ServiceCopyLinkButton } from "./ServiceCopyLinkButton";
+import { useMemo } from "react";
+import Script from "next/script";
 
 export function ServiceInformation({
     serviceData,
 }: {
     serviceData: EnterpriseServiceData;
 }) {
+    const jsonLd = useMemo(
+        () => ({
+            "@context": "https://schema.org",
+            "@type": "Service",
+
+            name: `Plan ${serviceData.name}`,
+
+            provider: {
+                "@type": "LocalBusiness",
+                name: "Zona Mágica",
+            },
+
+            areaServed: {
+                "@type": "City",
+                name: "Medellín",
+            },
+
+            offers: {
+                "@type": "Offer",
+                price: serviceData.price.toString(),
+                priceCurrency: "COP",
+            },
+        }),
+        [serviceData],
+    );
+
     return (
         <CenteredSection maw={600}>
             <Stack gap={"lg"}>
@@ -136,6 +164,13 @@ export function ServiceInformation({
                     </GridCol>
                 </Grid>
             </Stack>
+
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(jsonLd),
+                }}
+                type="application/ld+json"
+            />
         </CenteredSection>
     );
 }

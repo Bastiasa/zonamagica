@@ -1,5 +1,7 @@
 import { ServiceInformation } from "@/src/components/servicePage/ServiceInformation";
 import { ENTERPRISE_DEFINED_SERVICES } from "@/src/data/services";
+import useEnterpriseServiceData from "@/src/hooks/useEnterpriseServiceData";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -9,6 +11,28 @@ export function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+    const { slug } = await params;
+
+    const serviceData = ENTERPRISE_DEFINED_SERVICES.find(
+        (s) => s.slug === slug,
+    );
+
+    if (!serviceData) {
+        return {
+            title: "Zona Mágica | Planes",
+        };
+    }
+
+    return {
+        title: `Zona Mágica | Plan ${serviceData.name}`,
+    };
+}
+
 export default function ServicePageHandler({
     params,
 }: {
@@ -16,18 +40,11 @@ export default function ServicePageHandler({
 }) {
     const { slug } = React.use(params);
 
-    const foundServiceData =
-        ENTERPRISE_DEFINED_SERVICES.find(
-            (sd) => sd.slug === slug,
-        );
+    const serviceData = useEnterpriseServiceData(slug);
 
-    if (!foundServiceData) {
+    if (!serviceData) {
         notFound();
     }
 
-    return (
-        <ServiceInformation
-            serviceData={foundServiceData}
-        />
-    );
+    return <ServiceInformation serviceData={serviceData} />;
 }

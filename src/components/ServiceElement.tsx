@@ -1,18 +1,15 @@
 import {
-    Button,
     Card,
-    CardSection,
     Flex,
     GridCol,
-    Group,
     Image,
     Stack,
     Text,
     Title,
 } from "@mantine/core";
 import { LinkIcon } from "lucide-react";
-import { NavigationButton } from "./NavigationButton";
 import { copFormat } from "../utils/copFormat";
+import { NavigationButton } from "./NavigationButton";
 
 export type ServiceElementProps<
     Categories extends EnterpriseServiceCategories,
@@ -67,7 +64,6 @@ export function ServiceElement<
                     </Flex>
 
                     <NavigationButton
-                        variant="filled"
                         to={`/servicios/${serviceData.slug}`}
                         className="w-full"
                         rightSection={<LinkIcon />}

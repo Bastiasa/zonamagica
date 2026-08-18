@@ -10,6 +10,11 @@ import {
     Text,
     Title,
 } from "@mantine/core";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Zona Mágica | Contáctanos",
+};
 
 export default function ContactPageHandler() {
     return (
