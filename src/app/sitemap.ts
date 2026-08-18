@@ -4,6 +4,8 @@ import { ENTERPRISE_DEFINED_SERVICES } from "../data/services";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+    const lastModified = new Date();
+
     const gen = (path: string) => {
         return new URL(
             path,
@@ -14,26 +16,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const SERVICES_PAGES = ENTERPRISE_DEFINED_SERVICES.map(
         (serviceData) => ({
             url: gen(`/servicios/${serviceData.slug}`),
-            lastModified: new Date(),
+            lastModified,
         }),
     );
 
     const MAIN_PAGES = [
         {
             url: "https://zonamagica.site",
-            lastModified: new Date(),
+            lastModified,
         },
         {
             url: gen("/contacto"),
-            lastModified: new Date(),
+            lastModified,
         },
         {
             url: gen("/sobre-nosotros"),
-            lastModified: new Date(),
+            lastModified,
         },
         {
             url: gen("/contacto"),
-            lastModified: new Date(),
+            lastModified,
+        },
+        {
+            url: gen("/planes"),
+            lastModified,
         },
     ];
 
