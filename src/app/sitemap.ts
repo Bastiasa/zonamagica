@@ -14,10 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     };
 
     const SERVICES_PAGES = ENTERPRISE_DEFINED_SERVICES.map(
-        (serviceData) => ({
-            url: gen(`/servicios/${serviceData.slug}`),
-            lastModified,
-        }),
+        (serviceData) =>
+            ({
+                url: gen(`/servicios/${serviceData.slug}`),
+                lastModified,
+                images: [gen(serviceData.image ?? "")],
+            }) as MetadataRoute.Sitemap[number],
     );
 
     const MAIN_PAGES = [
