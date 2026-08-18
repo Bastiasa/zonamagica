@@ -6,4 +6,5 @@ export const HEADER_PAGES: [href: string, title: string][] =
         [withBasePath("/sobre-nosotros"), "Sobre nosotros"],
         //["/resenas", "Reseñas"],
         [withBasePath("/contacto"), "Contacto"],
+        [withBasePath("/planes"), "Planes"],
     ] as const;

@@ -64,7 +64,7 @@ export function ServiceElement<
                     </Flex>
 
                     <NavigationButton
-                        to={`/servicios/${serviceData.slug}`}
+                        to={`/planes/${serviceData.slug}`}
                         className="w-full"
                         rightSection={<LinkIcon />}
                     >

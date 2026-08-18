@@ -1,17 +1,11 @@
 import Image from "next/image";
 
-import { Group, Stack, Text, Title } from "@mantine/core";
+import { Stack, Text, Title } from "@mantine/core";
 
-import { ShimmerButton } from "@/components/ui/shimmer-button";
-
+import HERO_BACKGROUND from "@/src/assets/homepage/hero.jpeg";
 import LOGO_BANNER from "@/src/assets/logo_banner.webp";
-import HERO_BACKGROUND from "@/src/assets/homepage/hero.webp";
-import WHATSAPP_ICON from "@/src/assets/icons/whatsapp.svg";
-import { ContactButton } from "../ContactButton";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
-
-const MESSAGE = "¡Hola, me gustaría cotizar un evento!";
-const URL_TO_WHATSAPP = `https://wa.me/+573043498228/?text=${encodeURIComponent(MESSAGE)}`;
+import { ContactButton } from "../ContactButton";
 
 export function Hero() {
     return (
@@ -30,7 +24,7 @@ export function Hero() {
             align="center"
             justify={"center"}
         >
-            <div className="absolute opacity-[.8] -z-1 bg-black inset-0"></div>
+            <div className="absolute opacity-[.4] -z-1 bg-black inset-0"></div>
 
             <Image
                 className="w-full max-w-120"
@@ -42,7 +36,7 @@ export function Hero() {
                 ¡Diversión sin límites!
             </Title>
 
-            <div className="mt-16 hover:scale-108 transition-transform duration-200">
+            <div className="mt-16 bg-blue-200 rounded-full p-2 hover:scale-108 transition-transform duration-200">
                 <ContactButton
                     label={
                         <Text className="text-[1.4rem]! sm:text-[3rem]!">
