@@ -15,7 +15,7 @@ export default () => {
                     ENTERPRISE_DEFINED_SERVICES_CATEGORIES
                 }
             />
-            <Stack px={24} py={32}>
+            <Stack maw={1200} mx={"auto"} px={24} py={128}>
                 <Title order={1}>
                     Crea tu plan personalizado
                 </Title>
