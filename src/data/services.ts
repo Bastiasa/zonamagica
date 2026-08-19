@@ -114,7 +114,7 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
         name: "Magia Fantástica",
         slug: "magia-fantastica",
         category: "fiestas-y-recreacion",
-        price: 370_000,
+        price: 410_000,
         hours: 4,
         workers: 2,
         attributes: [
