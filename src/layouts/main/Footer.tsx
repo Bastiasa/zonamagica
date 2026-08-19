@@ -20,6 +20,7 @@ import {
     IconSparkles,
 } from "@tabler/icons-react";
 import Link from "next/link";
+import GoogleMaps from "./GoogleMaps";
 import { Logo } from "./Logo";
 
 const SERVICIOS = ENTERPRISE_DEFINED_SERVICES.map(
@@ -256,19 +257,7 @@ export default function MainLayoutFooter() {
                                     {CONTACT.email}
                                 </Anchor>
                             </Group>
-                            <Group
-                                gap="xs"
-                                wrap="nowrap"
-                                align="center"
-                            >
-                                <IconMapPin
-                                    size={24}
-                                    className="mt-0.5 shrink-0 text-[#2FE0E6]"
-                                />
-                                <Text className="text-white/75 text-sm">
-                                    {CONTACT.address}
-                                </Text>
-                            </Group>
+
                             <Group
                                 gap="xs"
                                 wrap="nowrap"
@@ -282,6 +271,21 @@ export default function MainLayoutFooter() {
                                     {CONTACT.hours}
                                 </Text>
                             </Group>
+                            <Group
+                                gap="xs"
+                                wrap="nowrap"
+                                align="center"
+                            >
+                                <IconMapPin
+                                    size={24}
+                                    className="mt-0.5 shrink-0 text-[#2FE0E6]"
+                                />
+                                <Text className="text-white/75 text-sm">
+                                    {CONTACT.address}
+                                </Text>
+                            </Group>
+
+                            <GoogleMaps />
                         </Stack>
                     </SimpleGrid>
 
