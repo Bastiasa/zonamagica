@@ -178,7 +178,7 @@ export default function MainLayoutFooter() {
                                 fw={800}
                                 className="text-[#FFC72C] text-sm uppercase tracking-wide"
                             >
-                                Servicios
+                                Planes
                             </Text>
                             {SERVICIOS.map((item) => (
                                 <Link
