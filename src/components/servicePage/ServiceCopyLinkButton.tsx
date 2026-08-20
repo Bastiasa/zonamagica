@@ -24,7 +24,7 @@ export function ServiceCopyLinkButton({
                 clipboard.copy(
                     new URL(
                         withBasePath(
-                            `/servicios/${serviceData.slug}`,
+                            `/planes/${serviceData.slug}`,
                         ),
                         window.location.origin,
                     ),
