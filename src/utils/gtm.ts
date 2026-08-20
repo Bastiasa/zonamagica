@@ -21,6 +21,17 @@ class GtmManager {
         });
     }
 
+    serviceShare(properties: {
+        service: EnterpriseServiceData;
+    }) {
+        this.addEvent({
+            event: "service_share",
+            serviceShareData: {
+                ...properties,
+            },
+        });
+    }
+
     socialMediaClicked(properties: {
         social_media:
             | "Instagram"

@@ -1,5 +1,6 @@
 "use client";
 
+import { gtmManager } from "@/src/utils/gtm";
 import { withBasePath } from "@/src/utils/withBasepath";
 import { ActionIcon } from "@mantine/core";
 import { useClipboard } from "@mantine/hooks";
@@ -28,6 +29,10 @@ export function ServiceCopyLinkButton({
                         window.location.origin,
                     ),
                 );
+
+                gtmManager.serviceLinkCopied({
+                    service: serviceData,
+                });
             }}
         >
             {clipboard.copied ? (

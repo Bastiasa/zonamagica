@@ -13,7 +13,10 @@ export type ShareButtonProps = {
 
 export function ShareButton({
     shareData,
-}: ShareButtonProps) {
+    onClick,
+}: ShareButtonProps & {
+    onClick?: () => void;
+}) {
     const handleShare = async () => {
         if (navigator.share) {
             try {
@@ -25,7 +28,13 @@ export function ShareButton({
     };
 
     return (
-        <ActionIcon onClick={handleShare} size={"lg"}>
+        <ActionIcon
+            onClick={() => {
+                onClick?.();
+                handleShare();
+            }}
+            size={"lg"}
+        >
             <IconShare />
         </ActionIcon>
     );
