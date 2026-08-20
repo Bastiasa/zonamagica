@@ -53,6 +53,9 @@ const BusinessLd = () => {
         addressRegion: "Antioquia",
         addressCountry: "CO",
 
+        streetAddress: CONTACT.address,
+        postalCode: "055420",
+
         areaServed: [
             {
                 "@type": "City",
