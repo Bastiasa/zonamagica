@@ -75,6 +75,7 @@ export const APP_THEME = createTheme({
         light: 6,
         dark: 5,
     },
+
     fontSizes: {
         xs: "clamp(1.125rem, 1.75vw, 1.5rem)",
         sm: "clamp(1.25rem, 2vw, 1.75rem)",
@@ -103,32 +104,32 @@ export const APP_THEME = createTheme({
 
         sizes: {
             h1: {
-                fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
                 lineHeight: "0.95",
             },
 
             h2: {
-                fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                fontSize: "clamp(2rem, 3.25vw, 3rem)",
                 lineHeight: "1",
             },
 
             h3: {
-                fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)",
                 lineHeight: "1.05",
             },
 
             h4: {
-                fontSize: "1.5rem",
+                fontSize: "clamp(1.35rem, 2vw, 1.75rem)",
                 lineHeight: "1.1",
             },
 
             h5: {
-                fontSize: "1.25rem",
+                fontSize: "clamp(1.2rem, 1.5vw, 1.5rem)",
                 lineHeight: "1.15",
             },
 
             h6: {
-                fontSize: "1rem",
+                fontSize: "clamp(1.1rem, 1.25vw, 1.25rem)",
                 lineHeight: "1.2",
             },
         },

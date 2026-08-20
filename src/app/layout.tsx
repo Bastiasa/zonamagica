@@ -58,19 +58,10 @@ export default function RootLayout({
                     type="image/png"
                 />
 
-                <link
-                    rel="preconnect"
-                    href="https://fonts.googleapis.com"
-                ></link>
-                <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossOrigin=""
-                ></link>
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Englebert&display=swap"
-                    rel="stylesheet"
-                ></link>
+                <link rel="preconnect" href="https://fonts.googleapis.com"/>
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
+                <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"></link>
+                
             </head>
             <body className="min-h-screen flex flex-col">
                 <GANoscript />
