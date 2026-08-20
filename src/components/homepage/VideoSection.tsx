@@ -58,7 +58,10 @@ export function VideoSection() {
                             xs: 12,
                         }}
                     >
-                        <Group justify="center">
+                        <Group
+                            className="overflow-hidden!"
+                            justify="center"
+                        >
                             <InstagramVideo />
                         </Group>
                     </GridCol>
