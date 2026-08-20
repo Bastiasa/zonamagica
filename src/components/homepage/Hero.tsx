@@ -44,6 +44,9 @@ export function Hero() {
                         </Text>
                     }
                     wsIcon={<IconBrandWhatsapp size={32} />}
+                    gtmProperties={{
+                        location: "hero",
+                    }}
                 />
             </div>
         </Stack>

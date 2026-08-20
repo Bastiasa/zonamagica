@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { ContactButton } from "@/src/components/ContactButton";
+import { NavigationButton } from "@/src/components/NavigationButton";
+import { gtmManager } from "@/src/utils/gtm";
 import {
     Box,
     Burger,
@@ -13,16 +14,12 @@ import {
     Text,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import {
-    IconBrandWhatsapp,
-    IconSparkles,
-} from "@tabler/icons-react";
-import { Logo } from "./Logo";
-import { CONTACT } from "../../data/contact";
-import { HEADER_PAGES } from "../../data/headerPages";
-import { ContactButton } from "@/src/components/ContactButton";
+import { IconSparkles } from "@tabler/icons-react";
 import Link from "next/link";
-import { NavigationButton } from "@/src/components/NavigationButton";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { HEADER_PAGES } from "../../data/headerPages";
+import { Logo } from "./Logo";
 
 export default function MainLayoutHeader() {
     const pathname = usePathname();
@@ -103,6 +100,13 @@ export default function MainLayoutHeader() {
                                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-extrabold text-white transition-colors"
                             >
                                 <ContactButton
+                                    onClick={gtmManager.whatsappButtonClicked.bind(
+                                        gtmManager,
+                                        {
+                                            location:
+                                                "header",
+                                        },
+                                    )}
                                     label={
                                         <p>Cotiza aquí</p>
                                     }
@@ -186,6 +190,9 @@ export default function MainLayoutHeader() {
                         className="inline-flex items-center justify-start gap-2 rounded-full px-5 py-3 text-sm font-extrabold text-[#3B0B63]"
                     >
                         <ContactButton
+                            gtmProperties={{
+                                location: "header_drawer",
+                            }}
                             label={<p>Cotiza aquí</p>}
                         />
                     </div>

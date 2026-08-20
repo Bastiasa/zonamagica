@@ -1,23 +1,24 @@
 "use client";
 
+import { copFormat } from "@/src/utils/copFormat";
+import { gtmManager } from "@/src/utils/gtm";
 import {
+    Blockquote,
+    Card,
     Chip,
     ChipProps,
     Flex,
+    Grid,
     GridCol,
     Stack,
     Text,
     Title,
-    Grid,
-    Card,
-    Blockquote,
 } from "@mantine/core";
-import { CenteredSection } from "../CenteredSection";
 import { useEffect, useMemo, useState } from "react";
+import { CenteredSection } from "../CenteredSection";
+import { ContactButton } from "../ContactButton";
 import { BypProvider, useBypContext } from "./Context";
 import { BypChipData } from "./types";
-import { copFormat } from "@/src/utils/copFormat";
-import { ContactButton } from "../ContactButton";
 
 const Item = ({
     defaultChecked,
@@ -36,8 +37,14 @@ const Item = ({
         useBypContext();
 
     useEffect(() => {
-        setChecked(items[index]?.checked ?? false);
-    }, [items]);
+        const value = items[index]?.checked ?? false;
+        setChecked(value);
+
+        gtmManager.bypItemSet({
+            item_name: itemData.label,
+            value,
+        });
+    }, [items, itemData]);
 
     return (
         <Chip
@@ -45,6 +52,13 @@ const Item = ({
             onChange={(value) => {
                 setChecked(value);
                 updateCheck(index, value);
+
+                if (value) {
+                    gtmManager.bypItemSet({
+                        item_name: itemData.label,
+                        value,
+                    });
+                }
             }}
             defaultChecked={defaultChecked}
             {...props}
@@ -91,6 +105,12 @@ const BuyButton = () => {
             {parsedItems && (
                 <div className="mx-auto">
                     <ContactButton
+                        gtmProperties={{
+                            location: "build_your_plan",
+                            byp_checked_items: items.filter(
+                                (item) => item.checked,
+                            ),
+                        }}
                         label={
                             <Text className="text-wrap!">
                                 Ordenar plan personalizado

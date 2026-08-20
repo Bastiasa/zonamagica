@@ -1,4 +1,5 @@
 import { NavigationButton } from "@/src/components/NavigationButton";
+import SocialMediaButton from "@/src/components/SocialMediaButton";
 import { CONTACT } from "@/src/data/contact";
 import { HEADER_PAGES } from "@/src/data/headerPages";
 import { ENTERPRISE_DEFINED_SERVICES } from "@/src/data/services";
@@ -148,28 +149,12 @@ export default function MainLayoutFooter() {
                                 celebración.
                             </Text>
                             <Group gap="xs" mt={4}>
-                                {SOCIALS.map(
-                                    ({
-                                        label,
-                                        href,
-                                        icon: Icon,
-                                    }) => (
-                                        <NavigationButton
-                                            key={label}
-                                            to={href}
-                                            variant="transparent"
-                                            aria-label={
-                                                label
-                                            }
-                                            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-[#FFC72C] hover:text-[#3B0B63]"
-                                        >
-                                            <Icon
-                                                size={32}
-                                                stroke={1.8}
-                                            />
-                                        </NavigationButton>
-                                    ),
-                                )}
+                                {SOCIALS.map((_, i) => (
+                                    <SocialMediaButton
+                                        key={i}
+                                        socialMediaIndex={i}
+                                    />
+                                ))}
                             </Group>
                         </Stack>
 

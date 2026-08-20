@@ -1,3 +1,5 @@
+"use client";
+
 import { Button, ButtonProps } from "@mantine/core";
 import Link from "next/link";
 export function NavigationButton({
@@ -6,6 +8,7 @@ export function NavigationButton({
     ...props
 }: ButtonProps & {
     to: string;
+    onClick: () => void;
 }) {
     return (
         <Link href={to}>

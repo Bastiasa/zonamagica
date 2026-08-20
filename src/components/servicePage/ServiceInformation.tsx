@@ -14,8 +14,8 @@ import {
 } from "@mantine/core";
 import { useMemo } from "react";
 import { CenteredSection } from "../CenteredSection";
-import { ContactButton } from "../ContactButton";
 import { GoBackButton } from "../GoBackButton";
+import BuyButton from "./BuyButton";
 import { SeeDetailsButton } from "./SeeDetailsButton";
 import { ServiceCopyLinkButton } from "./ServiceCopyLinkButton";
 import { ShareServiceButton } from "./ShareServiceButton";
@@ -174,9 +174,10 @@ export function ServiceInformation({
 
                         <GridCol span={12}>
                             <Group justify="center">
-                                <ContactButton
-                                    label={<p>Cotizar</p>}
-                                    wsMessage={`¡Hola!, me gustaría cotizar el plan ${serviceData.name}`}
+                                <BuyButton
+                                    serviceData={
+                                        serviceData
+                                    }
                                 />
                             </Group>
                         </GridCol>

@@ -1,21 +1,31 @@
 "use client";
 
 import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { Text, Group } from "@mantine/core";
+import { Group, Text } from "@mantine/core";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { CONTACT } from "../data/contact";
+import { gtmManager } from "../utils/gtm";
+
+const whatsappGtm = gtmManager.whatsappButtonClicked;
 
 export function ContactButton({
     label,
     wsIcon = <IconBrandWhatsapp />,
     wsMessage = "¡Hola! Quisiera cotizar un evento.",
+    gtmProperties = {},
 }: {
     label?: any;
     wsIcon?: any;
     wsMessage?: string;
+    gtmProperties?: Parameters<typeof whatsappGtm>[0];
 }) {
     return (
         <a
+            onClick={() => {
+                gtmManager.whatsappButtonClicked(
+                    gtmProperties,
+                );
+            }}
             href={`${CONTACT.whatsappHref}?text=${encodeURIComponent(wsMessage ?? "")}`}
         >
             <ShimmerButton
