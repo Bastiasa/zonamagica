@@ -2,7 +2,6 @@
 
 import { ContactButton } from "@/src/components/ContactButton";
 import { NavigationButton } from "@/src/components/NavigationButton";
-import { gtmManager } from "@/src/utils/gtm";
 import {
     Box,
     Burger,
@@ -100,13 +99,9 @@ export default function MainLayoutHeader() {
                                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-extrabold text-white transition-colors"
                             >
                                 <ContactButton
-                                    onClick={gtmManager.whatsappButtonClicked.bind(
-                                        gtmManager,
-                                        {
-                                            location:
-                                                "header",
-                                        },
-                                    )}
+                                    gtmProperties={{
+                                        location: "header",
+                                    }}
                                     label={
                                         <p>Cotiza aquí</p>
                                     }

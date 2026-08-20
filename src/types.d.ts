@@ -1,13 +1,6 @@
 export {};
 
 declare global {
-    interface Window {
-        dataLayer: {
-            event?: string;
-            [x: string]: any;
-        }[];
-    }
-
     type EnterpriseServiceCategory = {
         slug: string;
         label: string;
