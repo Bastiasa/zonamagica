@@ -6,11 +6,12 @@ import {
     Text,
     Title,
 } from "@mantine/core";
-import { CenteredSection } from "../CenteredSection";
 import Script from "next/script";
+import { CenteredSection } from "../CenteredSection";
 
-import COVER_IMAGE from "../../assets/homepage/cover.webp";
 import Image from "next/image";
+import COVER_IMAGE from "../../assets/homepage/cover.webp";
+import InstagramVideo from "./InstagramVideo";
 
 export function VideoSection() {
     return (
@@ -21,7 +22,7 @@ export function VideoSection() {
             />
 
             <CenteredSection>
-                <Grid>
+                <Grid gap={20}>
                     <GridCol
                         span={{
                             sm: 8,
@@ -44,7 +45,7 @@ export function VideoSection() {
                             </Text>
 
                             <Image
-                                className="mx-auto w-full h-auto sm:w-full sm:h-[450px] object-cover"
+                                className="mx-auto w-full h-auto sm:w-full sm:h-[710px] object-cover"
                                 alt="Zona Mágica y sus servicios"
                                 src={COVER_IMAGE}
                             />
@@ -58,11 +59,7 @@ export function VideoSection() {
                         }}
                     >
                         <Group justify="center">
-                            <blockquote
-                                className="instagram-media"
-                                data-instgrm-permalink="https://www.instagram.com/reel/DUl9CSBj15C/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14"
-                            />
+                            <InstagramVideo />
                         </Group>
                     </GridCol>
                 </Grid>
