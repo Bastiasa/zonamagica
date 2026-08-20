@@ -34,7 +34,7 @@ export function Logo({
     const mark =
         variant === "full" ? (
             <Image
-                src={withBasePath("/logo.png")}
+                src={withBasePath("/logo.webp")}
                 alt="Zona Mágica"
                 width={1536}
                 height={1024}
@@ -44,7 +44,7 @@ export function Logo({
             />
         ) : (
             <Image
-                src={withBasePath("/favicon.png")}
+                src={withBasePath("/favicon.webp")}
                 alt="Zona Mágica"
                 width={1254}
                 height={1254}

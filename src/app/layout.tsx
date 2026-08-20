@@ -54,7 +54,7 @@ export default function RootLayout({
 
                 <link
                     rel="shortcut icon"
-                    href={withBasePath("/favicon.png")}
+                    href={withBasePath("/favicon.webp")}
                     type="image/png"
                 />
 
