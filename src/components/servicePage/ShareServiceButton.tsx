@@ -34,7 +34,7 @@ export function ShareServiceButton({
                 text: `Mira este servicio ${serviceData.name} de Zona Mágica`,
                 url: new URL(
                     withBasePath(
-                        `/servicios/${serviceData.slug}`,
+                        `/planes/${serviceData.slug}`,
                     ),
                     window.location.origin,
                 ).toString(),
