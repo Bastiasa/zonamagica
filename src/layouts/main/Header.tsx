@@ -55,7 +55,7 @@ export default function MainLayoutHeader() {
                         <Logo
                             variant="full"
                             size={44}
-                            className="hidden sm:inline-flex"
+                            className="hidden! sm:inline-flex"
                         />
                         <Logo
                             variant="icon"
