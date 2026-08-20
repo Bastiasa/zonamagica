@@ -75,14 +75,14 @@ export const APP_THEME = createTheme({
         light: 6,
         dark: 5,
     },
-
     fontSizes: {
-        xs: "1.875rem", // 14px
-        sm: "2rem", // 16px
-        md: "2.125rem", // 18px
-        lg: "2.375rem", // 22px
-        xl: "2.75rem", // 28px
+        xs: "clamp(1.125rem, 1.75vw, 1.5rem)",
+        sm: "clamp(1.25rem, 2vw, 1.75rem)",
+        md: "clamp(1.5rem, 2.5vw, 2rem)",
+        lg: "clamp(1.75rem, 3vw, 2.5rem)",
+        xl: "clamp(2rem, 3.5vw, 3rem)",
     },
+
 
     colors: {
         magic,
