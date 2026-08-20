@@ -8,7 +8,7 @@ export function NavigationButton({
     ...props
 }: ButtonProps & {
     to: string;
-    onClick: () => void;
+    onClick?: () => void;
 }) {
     return (
         <Link href={to}>
