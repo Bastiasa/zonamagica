@@ -6,6 +6,7 @@ import {
     ENTERPRISE_DEFINED_SERVICES,
     ENTERPRISE_DEFINED_SERVICES_CATEGORIES,
 } from "../data/services";
+import { VideoSection } from "../components/homepage/VideoSection";
 
 export const metadata: Metadata = {
     alternates: {
@@ -17,6 +18,7 @@ export default function Home() {
     return (
         <>
             <Hero />
+            <VideoSection />
             <ServicesSection
                 services={ENTERPRISE_DEFINED_SERVICES}
                 categories={
