@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
 
 import { cn } from "@/src/utils";
-import { AppShell, AppShellSection } from "@mantine/core";
 
-import "./globals.css";
-import { Providers } from "../components/Providers";
-import MainLayoutHeader from "../layouts/main/Header";
-import MainLayoutFooter from "../layouts/main/Footer";
-import { withBasePath } from "../utils/withBasepath";
-import {
-    GANoscript,
-    GAInit,
-    GoogleConsent,
-} from "../components/GAnalytics";
 import CookieBanner from "../components/ConsentBanner";
 import { ConsentManager } from "../components/ConsentManager";
+import {
+    GAInit,
+    GANoscript,
+    GoogleConsent,
+} from "../components/GAnalytics";
+import Ld from "../components/Ld";
+import { Providers } from "../components/Providers";
+import { CONTACT } from "../data/contact";
 import { APP_THEME } from "../data/theme";
+import MainLayoutFooter from "../layouts/main/Footer";
+import MainLayoutHeader from "../layouts/main/Header";
+import websitePage from "../utils/websitePage";
+import { withBasePath } from "../utils/withBasepath";
+import "./globals.css";
 
 export const metadata: Metadata = {
     title: "Zona Mágica | Fiestas Infantiles y Recreación en Medellín",
@@ -34,6 +36,70 @@ export const metadata: Metadata = {
         },
     ],
     themeColor: APP_THEME.colors?.magic?.[6],
+};
+
+const BusinessLd = () => {
+    const business = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": websitePage("#business"),
+        name: "Zona Mágica",
+        url: websitePage("/"),
+        description: metadata.description,
+        telephone: CONTACT.telephone,
+        address: CONTACT.address,
+
+        addressLocality: "Medellín",
+        addressRegion: "Antioquia",
+        addressCountry: "CO",
+
+        areaServed: [
+            {
+                "@type": "City",
+                name: "Medellín",
+            },
+
+            {
+                "@type": "City",
+                name: "Envigado",
+            },
+            {
+                "@type": "City",
+                name: "Itagüí",
+            },
+            {
+                "@type": "City",
+                name: "Bello",
+            },
+            {
+                "@type": "City",
+                name: "Sabaneta",
+            },
+        ],
+
+        image: websitePage("/logo.webp"),
+        logo: websitePage("/logo.webp"),
+    };
+
+    const website = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": websitePage("#website"),
+        url: websitePage("/"),
+        name: "Zona Mágica",
+        description: metadata.description,
+        inLanguage: "es-CO",
+        publisher: {
+            "@id": websitePage("#business"),
+        },
+    };
+
+    return (
+        <>
+            <Ld content={website} />
+            <Ld content={business} />
+        </>
+    );
 };
 
 export default function RootLayout({
@@ -58,12 +124,23 @@ export default function RootLayout({
                     type="image/png"
                 />
 
-                <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin=""/>
-                <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"></link>
-                
+                <link
+                    rel="preconnect"
+                    href="https://fonts.googleapis.com"
+                />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin=""
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Englebert&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+                    rel="stylesheet"
+                ></link>
             </head>
             <body className="min-h-screen flex flex-col">
+                <BusinessLd />
+
                 <GANoscript />
                 <ConsentManager />
 

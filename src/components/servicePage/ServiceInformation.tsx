@@ -1,4 +1,7 @@
 import { copFormat } from "@/src/utils/copFormat";
+import websitePage, {
+    servicePage,
+} from "@/src/utils/websitePage";
 import {
     Divider,
     Grid,
@@ -15,6 +18,7 @@ import {
 import { useMemo } from "react";
 import { CenteredSection } from "../CenteredSection";
 import { GoBackButton } from "../GoBackButton";
+import Ld from "../Ld";
 import BuyButton from "./BuyButton";
 import { SeeDetailsButton } from "./SeeDetailsButton";
 import { ServiceCopyLinkButton } from "./ServiceCopyLinkButton";
@@ -29,12 +33,18 @@ export function ServiceInformation({
         () => ({
             "@context": "https://schema.org",
             "@type": "Service",
+            "@id": servicePage(
+                `${serviceData.slug}#service`,
+            ),
 
             name: `Plan ${serviceData.name}`,
 
+            description: serviceData.description,
+
+            url: servicePage(serviceData),
+
             provider: {
-                "@type": "LocalBusiness",
-                name: "Zona Mágica",
+                "@id": websitePage("#business"),
             },
 
             areaServed: {
@@ -42,10 +52,14 @@ export function ServiceInformation({
                 name: "Medellín",
             },
 
+            image: websitePage(serviceData.image ?? ""),
+
             offers: {
                 "@type": "Offer",
                 price: serviceData.price.toString(),
                 priceCurrency: "COP",
+                availability: "https://schema.org/InStock",
+                url: servicePage(serviceData),
             },
         }),
         [serviceData],
@@ -53,6 +67,8 @@ export function ServiceInformation({
 
     return (
         <CenteredSection maw={1200}>
+            <Ld content={jsonLd} />
+
             <SimpleGrid
                 cols={{
                     base: 1,
@@ -184,13 +200,6 @@ export function ServiceInformation({
                     </Grid>
                 </Stack>
             </SimpleGrid>
-
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(jsonLd),
-                }}
-                type="application/ld+json"
-            />
         </CenteredSection>
     );
 }

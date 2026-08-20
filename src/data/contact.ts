@@ -1,4 +1,5 @@
 export const CONTACT = {
+    telephone: "+573043498228",
     whatsapp: "+57 304 3498228",
     whatsappHref: "https://wa.me/573043498228",
     email: "zmeventosyrecreacion@gmail.com",
