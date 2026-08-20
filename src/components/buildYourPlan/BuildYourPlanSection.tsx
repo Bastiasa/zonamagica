@@ -39,13 +39,6 @@ const Item = ({
     useEffect(() => {
         const value = items[index]?.checked;
         setChecked(value ?? false);
-
-        if (typeof value !== "undefined") {
-            gtmManager.bypItemSet({
-                item_name: itemData.label,
-                value,
-            });
-        }
     }, [items, itemData]);
 
     return (
