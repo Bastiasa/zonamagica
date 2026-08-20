@@ -37,13 +37,15 @@ const Item = ({
         useBypContext();
 
     useEffect(() => {
-        const value = items[index]?.checked ?? false;
-        setChecked(value);
+        const value = items[index]?.checked;
+        setChecked(value ?? false);
 
-        gtmManager.bypItemSet({
-            item_name: itemData.label,
-            value,
-        });
+        if (typeof value !== "undefined") {
+            gtmManager.bypItemSet({
+                item_name: itemData.label,
+                value,
+            });
+        }
     }, [items, itemData]);
 
     return (

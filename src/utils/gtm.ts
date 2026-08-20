@@ -15,7 +15,9 @@ class GtmManager {
     }) {
         this.addEvent({
             event: "service_link_copied",
-            ...properties,
+            serviceLinkCopiedData: {
+                ...properties,
+            },
         });
     }
 
@@ -29,7 +31,9 @@ class GtmManager {
     }) {
         this.addEvent({
             event: "open_social_media",
-            ...properties,
+            openSocialMediaData: {
+                ...properties,
+            },
         });
     }
 
@@ -51,8 +55,10 @@ class GtmManager {
     }) {
         this.addEvent({
             event: "whatsapp_click",
-            location: "unknown",
-            ...properties,
+            whatsappClickData: {
+                location: "unknown",
+                ...properties,
+            },
         });
     }
 
@@ -61,8 +67,10 @@ class GtmManager {
         value: boolean;
     }) {
         this.addEvent({
-            event: "build_yout_plan_item_set",
-            ...properties,
+            event: "build_your_plan_item_set",
+            bypItemSetData: {
+                ...properties,
+            },
         });
     }
 }
