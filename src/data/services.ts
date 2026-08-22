@@ -47,7 +47,7 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
         slug: "chispa-magica",
         name: "Chispa Mágica",
         price: 160_000,
-        hours: 4,
+        hours: 3,
         workers: 1,
         attributes: [
             ATTRIBUTES.PINTUCARITAS,
