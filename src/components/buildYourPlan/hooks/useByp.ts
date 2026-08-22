@@ -1,4 +1,3 @@
-import { useObject } from "@/src/hooks/useObject";
 import { useMemo, useState } from "react";
 import { BypChipData } from "../types";
 
@@ -31,8 +30,28 @@ const ITEMS = [
     },
 
     {
+        label: "Mago",
+        price: 150_000,
+    },
+
+    {
+        label: "Luces",
+        price: 80_000,
+    },
+
+    {
+        label: "Máquina de humo",
+        price: 50_000,
+    },
+
+    {
         label: "Personaje temático",
         price: [25_000, 200_000],
+    },
+
+    {
+        label: "Inflable",
+        price: [350_000, 700_000],
     },
 
     {
@@ -57,16 +76,6 @@ const ITEMS = [
         label: "Decoración inmobiliaria",
         price: [300_000, 580_000],
         group: "decoración",
-    },
-
-    {
-        label: "Inflable",
-        price: 180_000,
-    },
-
-    {
-        label: "Mago",
-        price: 150_000,
     },
 ] as BypChipData[];
 
