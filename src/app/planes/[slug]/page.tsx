@@ -1,6 +1,7 @@
 import { ServiceInformation } from "@/src/components/servicePage/ServiceInformation";
 import { ENTERPRISE_DEFINED_SERVICES } from "@/src/data/services";
 import useEnterpriseServiceData from "@/src/hooks/useEnterpriseServiceData";
+import { servicePage } from "@/src/utils/websitePage";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -31,7 +32,7 @@ export async function generateMetadata({
     return {
         title: `Zona Mágica | Plan ${serviceData.name}`,
         alternates: {
-            canonical: `https://zonamagica.site/servicios/${serviceData.slug}`,
+            canonical: servicePage(serviceData),
         },
     };
 }

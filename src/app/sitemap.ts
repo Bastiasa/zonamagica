@@ -44,6 +44,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: gen("/planes"),
             lastModified,
         },
+        {
+            url: gen("/evento-personalizado"),
+            lastModified,
+        },
     ];
 
     return [...MAIN_PAGES, ...SERVICES_PAGES];

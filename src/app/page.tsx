@@ -7,11 +7,12 @@ import {
     ENTERPRISE_DEFINED_SERVICES,
     ENTERPRISE_DEFINED_SERVICES_CATEGORIES,
 } from "../data/services";
+import websitePage from "../utils/websitePage";
 
 export const metadata: Metadata = {
     title: "Zona Mágica | Recreacionistas en Medellín, fiestas infantiles y más",
     alternates: {
-        canonical: "https://zonamagica.site/",
+        canonical: websitePage("/"),
     },
 };
 

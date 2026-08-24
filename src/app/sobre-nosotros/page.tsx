@@ -1,4 +1,5 @@
 import { CenteredSection } from "@/src/components/CenteredSection";
+import websitePage from "@/src/utils/websitePage";
 import { withBasePath } from "@/src/utils/withBasepath";
 import {
     Button,
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     title: "Zona Mágica | Sobre nosotros",
 
     alternates: {
-        canonical: "https://zonamagica.site/sobre-nosotros",
+        canonical: websitePage("/sobre-nosotros"),
     },
 };
 

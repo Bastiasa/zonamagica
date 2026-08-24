@@ -4,7 +4,16 @@ import {
     ENTERPRISE_DEFINED_SERVICES,
     ENTERPRISE_DEFINED_SERVICES_CATEGORIES,
 } from "@/src/data/services";
+import websitePage from "@/src/utils/websitePage";
 import { Stack, Text, Title } from "@mantine/core";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Zona Mágica | Nuestros planes",
+    alternates: {
+        canonical: websitePage("/planes"),
+    },
+};
 
 export default () => {
     return (

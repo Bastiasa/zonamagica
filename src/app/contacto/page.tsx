@@ -2,6 +2,7 @@ import { CenteredSection } from "@/src/components/CenteredSection";
 import { ContactButton } from "@/src/components/ContactButton";
 import { SOCIALS } from "@/src/data/socials";
 import { APP_THEME } from "@/src/data/theme";
+import websitePage from "@/src/utils/websitePage";
 import {
     Anchor,
     Group,
@@ -14,7 +15,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Zona Mágica | Contáctanos",
     alternates: {
-        canonical: "https://zonamagica.site/contacto",
+        canonical: websitePage("/contacto"),
     },
 };
 
