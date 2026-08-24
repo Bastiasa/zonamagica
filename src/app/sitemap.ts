@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ENTERPRISE_DEFINED_SERVICES } from "../data/services";
+import { servicePage } from "../utils/websitePage";
 
 export const dynamic = "force-static";
 
@@ -16,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const SERVICES_PAGES = ENTERPRISE_DEFINED_SERVICES.map(
         (serviceData) =>
             ({
-                url: gen(`/servicios/${serviceData.slug}`),
+                url: servicePage(serviceData),
                 lastModified,
                 images: [gen(serviceData.image ?? "")],
             }) as MetadataRoute.Sitemap[number],
