@@ -9,7 +9,7 @@ import {
 } from "../data/services";
 
 export const metadata: Metadata = {
-    title: "Zona Mágica | Recreacionistas en Medellí, fiestas infantiles y más",
+    title: "Zona Mágica | Recreacionistas en Medellín, fiestas infantiles y más",
     alternates: {
         canonical: "https://zonamagica.site/",
     },
