@@ -102,9 +102,19 @@ const BuyButton = () => {
                     <ContactButton
                         gtmProperties={{
                             location: "build_your_plan",
-                            byp_checked_items: items.filter(
-                                (item) => item.checked,
-                            ),
+                            byp_checked_items: items
+                                .filter(
+                                    (item) => item.checked,
+                                )
+                                .map((item) => ({
+                                    item_id: item.label,
+                                    item_name: item.label,
+                                    price:
+                                        typeof item.price ==
+                                        "number"
+                                            ? item.price
+                                            : item.price[1],
+                                })),
                         }}
                         label={
                             <Text className="text-wrap!">

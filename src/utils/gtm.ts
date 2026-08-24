@@ -1,3 +1,10 @@
+type GA4Item = {
+    item_id?: string,
+    item_name?: string;
+    item_category?: string;
+    price?: number;
+}
+
 class GtmManager {
     private get dataLayer() {
         return window.dataLayer ?? [];
@@ -34,11 +41,11 @@ class GtmManager {
 
     socialMediaClicked(properties: {
         social_media:
-            | "Instagram"
-            | "Facebook"
-            | "TikTok"
-            | "Whatsapp"
-            | string;
+        | "Instagram"
+        | "Facebook"
+        | "TikTok"
+        | "Whatsapp"
+        | string;
     }) {
         this.addEvent({
             event: "open_social_media",
@@ -50,19 +57,14 @@ class GtmManager {
 
     whatsappButtonClicked(properties: {
         location?:
-            | "hero"
-            | "unknown"
-            | "service"
-            | "build_your_plan"
-            | "header"
-            | "header_drawer";
+        | "hero"
+        | "unknown"
+        | "service"
+        | "build_your_plan"
+        | "header"
+        | "header_drawer";
         service?: EnterpriseServiceData;
-        byp_checked_items?: {
-            checked?: boolean;
-            label: string;
-            price: number | [number, number];
-            group?: string;
-        }[];
+        byp_checked_items?: GA4Item[];
     }) {
         this.addEvent({
             event: "whatsapp_click",
