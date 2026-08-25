@@ -13,6 +13,10 @@ const ATTRIBUTES = {
     DECORACION_SENCILLA: "Decoración Sencilla",
     INFLABLE: "Inflable",
 
+    MAGIA: "Show de Magia",
+
+    EXPERIMENTOS: "Experimentos Científicos",
+
     RECREACION_ADULTOS: "Recreación de Adultos",
     CONCURSO_REGALOS: "Concurso de Regalos",
 
@@ -155,8 +159,8 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
     },
 
     {
-        name: "Mega Fiesta VIP",
-        slug: "mega-fiesta-vip",
+        name: "Súper Fiesta",
+        slug: "super-fiesta",
         category: "fiestas-y-recreacion",
         price: 470_000,
         hours: 8,
@@ -175,7 +179,32 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "4 horas de decoración",
             "4 horas de recreación",
         ],
-        image: IMAGE("Mega Fiesta VIP.jpg"),
+        image: IMAGE("Súper Fiesta.jpg"),
+    },
+
+    {
+        name: "Universo Premium",
+        slug: "universo-premium",
+        category: "fiestas-y-recreacion",
+        hours: 8,
+        price: 520_000,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.PINTUCARITAS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.SHOW_PAYASOS,
+            ATTRIBUTES.SHOW_TITERES,
+            ATTRIBUTES.GLOBOFLEXIA,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.PERSONAJE,
+            ATTRIBUTES.INFLABLE,
+            ATTRIBUTES.DECORACION_SENCILLA,
+            ATTRIBUTES.SONIDO_BASICO,
+
+            "4 horas de decoración",
+            "4 horas de recreación",
+        ],
+        image: IMAGE("Universo Premium.jpg"),
     },
 
     {
@@ -210,6 +239,26 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             "Regalo a los Padres (Cortesía de Zona Mágica)",
         ],
         image: IMAGE("Dulce Espera.jpg"),
+    },
+
+    {
+        name: "Magia & Ciencia Sorpresa",
+        slug: "magia-y-ciencia-sorpresa",
+        category: "otras",
+        hours: 4,
+        workers: 2,
+
+        price: 600_000,
+
+        attributes: [
+            ATTRIBUTES.PINTUCARITAS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.MAGIA,
+            ATTRIBUTES.EXPERIMENTOS,
+        ],
+
+        image: IMAGE("Magia & Ciencia Sorpresa.jpg"),
     },
 
     {

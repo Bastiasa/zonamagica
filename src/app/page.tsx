@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 import { BuildYourPlanSection } from "../components/buildYourPlan/BuildYourPlanSection";
+import { FaqSection } from "../components/faq/FaqSection";
 import { Hero } from "../components/homepage/Hero";
 import { ServicesSection } from "../components/homepage/ServicesSection";
 import { VideoSection } from "../components/homepage/VideoSection";
+import { ENTERPRISE_FREQUENTLY_ASKED_QUESTIONS } from "../data/faq";
 import {
     ENTERPRISE_DEFINED_SERVICES,
     ENTERPRISE_DEFINED_SERVICES_CATEGORIES,
@@ -29,6 +31,12 @@ export default function Home() {
             />
 
             <BuildYourPlanSection />
+
+            <FaqSection
+                questions={
+                    ENTERPRISE_FREQUENTLY_ASKED_QUESTIONS
+                }
+            />
         </>
     );
 }
