@@ -18,7 +18,7 @@ export const ENTERPRISE_FREQUENTLY_ASKED_QUESTIONS: FaqSectionItem[] =
                     <Text>
                         Estamos ubicados en Envigado,
                         Antioquia. Puedes revisar nuestra{" "}
-                        <Anchor href="https://share.google/2r9rkrXNZ2dilUfpV">
+                        <Anchor href="https://maps.app.goo.gl/oyD68ymPt4KCHhNEA">
                             ubicación aquí
                         </Anchor>
                         .
