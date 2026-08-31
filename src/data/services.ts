@@ -258,7 +258,7 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             ATTRIBUTES.EXPERIMENTOS,
         ],
 
-        image: IMAGE("Magia &amp; Ciencia Sorpresa.jpg"),
+        image: IMAGE("Magia & Ciencia Sorpresa.jpg"),
     },
 
     {
