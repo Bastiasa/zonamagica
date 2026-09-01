@@ -118,8 +118,8 @@ export default function RootLayout({
             )}
         >
             <head>
-                <GAInit />
                 <GoogleConsent />
+                <GAInit />
 
                 <link
                     rel="shortcut icon"

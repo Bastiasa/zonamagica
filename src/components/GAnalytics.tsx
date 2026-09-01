@@ -57,8 +57,6 @@ export function GoogleConsent() {
 
                     wait_for_update: 500
                 });
-
-                gtag('config', 'AW-18393780846');
             `}
         </Script>
     );
