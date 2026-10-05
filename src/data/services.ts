@@ -1,6 +1,9 @@
 import { withBasePath } from "../utils/withBasepath";
 
 const ATTRIBUTES = {
+    FH_RECREACION: "4 horas de recreación",
+    FH_DECORACION: "4 horas de decoración",
+
     PINTUCARITAS: "Pintucaritas",
     RECREACION_DIRIGIDA: "Recreación dirigida",
     SHOW_PAYASOS: "Show de Payasos",
@@ -19,6 +22,8 @@ const ATTRIBUTES = {
 
     RECREACION_ADULTOS: "Recreación de Adultos",
     CONCURSO_REGALOS: "Concurso de Regalos",
+    REGALO_CORTESIA:
+        "Regalo a los Padres (Cortesía de Zona Mágica)",
 
     BABY_ZONE: "Baby Zone",
     MANUALIDADES: "Manualidades",
@@ -120,6 +125,26 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
     },
 
     {
+        slug: "serpentina-musical",
+        name: "Serpentina Musical",
+        category: "fiestas-y-recreacion",
+        price: 320_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.PINTUCARITAS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.SHOW_PAYASOS,
+            ATTRIBUTES.SHOW_TITERES,
+            ATTRIBUTES.GLOBOFLEXIA,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.PERSONAJE,
+            ATTRIBUTES.SONIDO_BASICO,
+        ],
+        image: IMAGE("Serpentina Musical.jpg"),
+    },
+
+    {
         name: "Aventura Inflable",
         slug: "aventura-inflable",
         category: "fiestas-y-recreacion",
@@ -156,6 +181,28 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             ATTRIBUTES.PERSONAJE,
         ],
         image: IMAGE("Magia Fantástica.jpg"),
+    },
+
+    {
+        slug: "maravilla",
+        name: "Maravilla",
+        category: "fiestas-y-recreacion",
+        price: 420_000,
+        hours: 8,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.PINTUCARITAS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.SHOW_PAYASOS,
+            ATTRIBUTES.SHOW_TITERES,
+            ATTRIBUTES.GLOBOFLEXIA,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.PERSONAJE,
+            ATTRIBUTES.DECORACION_SENCILLA,
+            ATTRIBUTES.FH_DECORACION,
+            ATTRIBUTES.FH_RECREACION,
+        ],
+        image: IMAGE("Maravilla.jpg"),
     },
 
     {
@@ -226,22 +273,6 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
     },
 
     {
-        category: "otras",
-        name: "Dulce Espera",
-        slug: "dulce-espera",
-        price: 360_000,
-        hours: 4,
-        workers: 2,
-        attributes: [
-            ATTRIBUTES.RECREACION_ADULTOS,
-            ATTRIBUTES.CONCURSO_REGALOS,
-            ATTRIBUTES.SONIDO_BASICO,
-            "Regalo a los Padres (Cortesía de Zona Mágica)",
-        ],
-        image: IMAGE("Dulce Espera.jpg"),
-    },
-
-    {
         name: "Magia & Ciencia Sorpresa",
         slug: "magia-y-ciencia-sorpresa",
         category: "otras",
@@ -259,6 +290,38 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
         ],
 
         image: IMAGE("Magia Y Ciencia Sorpresa.jpg"),
+    },
+
+    {
+        category: "otras",
+        name: "Dulce Espera",
+        slug: "dulce-espera",
+        price: 360_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.RECREACION_ADULTOS,
+            ATTRIBUTES.CONCURSO_REGALOS,
+            ATTRIBUTES.SONIDO_BASICO,
+            ATTRIBUTES.REGALO_CORTESIA,
+        ],
+        image: IMAGE("Dulce Espera.jpg"),
+    },
+
+    {
+        category: "otras",
+        name: "Celebración de Vida",
+        slug: "celebracion-de-vida",
+        price: 310_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.RECREACION_ADULTOS,
+            ATTRIBUTES.CONCURSO_REGALOS,
+            ATTRIBUTES.SONIDO_BASICO,
+            ATTRIBUTES.REGALO_CORTESIA,
+        ],
+        image: IMAGE("Celebración de Vida.jpg"),
     },
 
     {
