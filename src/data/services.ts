@@ -15,6 +15,9 @@ const ATTRIBUTES = {
     SONIDO_PROFESIONAL: "Equipo de Sonido Profesional",
     DECORACION_SENCILLA: "Decoración Sencilla",
     INFLABLE: "Inflable",
+    TATUAJES: "Tatuajes temporales",
+    LACA: "Laca de color",
+    REGALO_RIFA: "Regalo para Rifar",
 
     MAGIA: "Show de Magia",
 
@@ -45,6 +48,11 @@ export const ENTERPRISE_DEFINED_SERVICES_CATEGORIES = [
     {
         slug: "otras",
         label: "Otras opciones de fiestas",
+    },
+
+    {
+        slug: "primera-comunion",
+        label: "Primera Comunión",
     },
 ] as const;
 
@@ -342,5 +350,65 @@ export const ENTERPRISE_DEFINED_SERVICES: EnterpriseServiceData<
             ATTRIBUTES.SONIDO_BASICO,
         ],
         image: IMAGE("Mini Exploradores.jpg"),
+    },
+
+    {
+        slug: "angel-guardian",
+        name: "Ángel Guardián",
+        category: "primera-comunion",
+        price: 300_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.TATUAJES,
+            ATTRIBUTES.LACA,
+            ATTRIBUTES.SHOW_PAYASOS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.GLOBOFLEXIA,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.REGALO_RIFA,
+        ],
+        image: IMAGE("Ángel Guardián.jpg"),
+    },
+
+    {
+        slug: "luz-divina",
+        name: "Luz Divina",
+        category: "primera-comunion",
+        price: 380_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.TATUAJES,
+            ATTRIBUTES.LACA,
+            ATTRIBUTES.SHOW_PAYASOS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.GLOBOFLEXIA,
+            ATTRIBUTES.SONIDO_BASICO,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.REGALO_RIFA,
+        ],
+        image: IMAGE("Luz Divina.jpg"),
+    },
+
+    {
+        slug: "encuentro-sagrado",
+        name: "Encuentro Sagrado",
+        category: "primera-comunion",
+        price: 590_000,
+        hours: 4,
+        workers: 2,
+        attributes: [
+            ATTRIBUTES.TATUAJES,
+            ATTRIBUTES.LACA,
+            ATTRIBUTES.SHOW_PAYASOS,
+            ATTRIBUTES.RECREACION_DIRIGIDA,
+            ATTRIBUTES.DECORACION_SENCILLA,
+            ATTRIBUTES.SONIDO_BASICO,
+            ATTRIBUTES.GLOBOFLEXIA,
+            ATTRIBUTES.HORA_LOCA,
+            ATTRIBUTES.REGALO_RIFA,
+        ],
+        image: IMAGE("Encuentro Sagrado.jpg"),
     },
 ] as const;
